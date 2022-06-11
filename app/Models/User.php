@@ -14,7 +14,7 @@ use App\Models\PremiumMessage;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Jetstream\HasProfileHeaderPhoto;
+use App\Traits\HasProfileHeaderPhoto;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -25,7 +25,7 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
-    // use HasProfileHeaderPhoto;
+    use HasProfileHeaderPhoto;
     use TwoFactorAuthenticatable;
     use Likeable;
     use Notifiable;

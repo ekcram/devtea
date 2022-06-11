@@ -234,7 +234,7 @@
             <div class="col-span-6 sm:col-span-4">
                 <jet-label
                     for="phone"
-                    value="Teléfono (opcional)"
+                    value="Teléfono"
                     class="text-steel-teal"
                 />
                 <jet-input
