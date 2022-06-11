@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Stripe::setApiKey(config('services.stripe.secret'));
-        //app(UrlGenerator::class)->forceScheme('https');
+        //Stripe::setApiKey(config('services.stripe.secret'));
+        app(UrlGenerator::class)->forceScheme('https');
     }
 }
