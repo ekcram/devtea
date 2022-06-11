@@ -1,0 +1,44 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.10.0",
+        "@inertiajs/inertia-vue3": "^0.5.1",
+        "@inertiajs/progress": "^0.2.6",
+        "@tailwindcss/forms": "^0.4.0",
+        "@tailwindcss/typography": "^0.5.0",
+        "@vue/compiler-sfc": "^3.0.10",
+        "axios": "^0.21",
+        "browser-sync-webpack-plugin": "^0.1.0",
+        "laravel-echo": "^1.11.5",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "node-sass": "^7.0.1",
+        "postcss": "^8.1.14",
+        "postcss-import": "^14.0.2",
+        "pusher-js": "^7.0.6",
+        "sass-loader": "^13.0.0",
+        "tailwindcss": "^3.0.0",
+        "vue": "^3.2.36",
+        "vue-loader": "^16.1.2"
+    },
+    "dependencies": {
+        "@tailwindcss/line-clamp": "^0.4.0",
+        "flowbite": "^1.3.3",
+        "jquery": "^3.6.0",
+        "moment": "^2.29.1",
+        "quill-image-resize": "^3.0.9",
+        "sweetalert2": "^11.4.8",
+        "vue-spinner": "^1.0.4",
+        "vue3-quill": "^0.2.6",
+        "vuejs-datatable": "^2.0.0-alpha.7"
+    }
+}
