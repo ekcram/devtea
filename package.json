@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "postinstall": "npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.10.0",
@@ -17,7 +18,6 @@
         "@tailwindcss/typography": "^0.5.0",
         "@vue/compiler-sfc": "^3.0.10",
         "axios": "^0.21",
-        "browser-sync-webpack-plugin": "^0.1.0",
         "laravel-echo": "^1.11.5",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
