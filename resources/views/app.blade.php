@@ -21,15 +21,4 @@
     <body class="font-primary antialiased">
         @inertia
     </body>
-    <script>
-    
-        var pusher = new Pusher('f2c7285a6b796f6a80b1', {
-          cluster: 'eu'
-        });
-    
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
-          alert(JSON.stringify(data));
-        });
-      </script>
 </html>
