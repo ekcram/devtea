@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if(config('app.env') === 'production') {
-            \URL::forceScheme('https');
-         }
+            app(UrlGenerator::class)->forceScheme('https');
+        }
         //Stripe::setApiKey(config('services.stripe.secret'));
         //app(UrlGenerator::class)->forceScheme('https');
     }
