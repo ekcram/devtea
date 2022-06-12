@@ -65,7 +65,7 @@ class DoubtController extends Controller
             'user_id' => auth()->id(),  
             'content' => $request->content,
         ]);
-        event(new NewDoubtMessageEvent($message, auth()->user()))->toOthers();
+        broadcast(new NewDoubtMessageEvent($message, auth()->user()))->toOthers();
         return back();
     }
 
