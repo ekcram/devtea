@@ -22,8 +22,8 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: f2c7285a6b796f6a80b1,
-    cluster: eu,
+    key: 'f2c7285a6b796f6a80b1',
+    cluster: 'eu',
     forceTLS: true,
     disableStats: true,
     auth: {
