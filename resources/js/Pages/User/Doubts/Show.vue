@@ -80,6 +80,7 @@ export default {
     },
     methods: {
         connect() {
+            
             Echo.private(`doubt.${this.doubt.id}`)
             .listen('NewDoubtMessageEvent', (e) => {
                 console.log(e);
