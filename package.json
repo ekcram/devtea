@@ -38,7 +38,6 @@
         "quill-image-resize": "^3.0.9",
         "sweetalert2": "^11.4.8",
         "vue-spinner": "^1.0.4",
-        "vue3-quill": "^0.2.6",
-        "vuejs-datatable": "^2.0.0-alpha.7"
+        "vue3-quill": "^0.2.6"
     }
 }
