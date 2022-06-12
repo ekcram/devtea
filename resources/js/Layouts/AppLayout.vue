@@ -13,7 +13,7 @@
                                     class="h-4/5 w-14"
                                 >
                                     <img
-                                        :src="'/storage/images/logo.png'"
+                                        :src="'/public/images/logo.png'"
                                         alt="Logo"
                                     />
                                 </Link>
