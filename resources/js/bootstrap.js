@@ -22,20 +22,6 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: process.env.MIX_PUSHER_APP_KEY,
-    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-    forceTLS: true,
-    disableStats: true,
-    auth: {
-        headers: {
-          'X-CSRF-Token': '{{ csrf_token() }}',
-        }
-      }
-});
-
-if(config('app.env') === 'production') {
-  window.Echo = new Echo({
-    broadcaster: 'pusher',
     key: process.env.PUSHER_APP_KEY,
     cluster: process.env.PUSHER_APP_CLUSTER,
     forceTLS: true,
@@ -46,6 +32,6 @@ if(config('app.env') === 'production') {
         }
       }
 });
-}
+
 
 
