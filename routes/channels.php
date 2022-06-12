@@ -27,12 +27,3 @@ Broadcast::channel('doubt.{doubtId}', function ($user, $doubtId) {
         ];
     }
 });
-
-Broadcast::channel('chat.{chatId}', function ($user, $chatId) {
-    if(Auth::check()) {
-        return [
-            'username' => $user->username,
-            'avatar' => $user->profile_photo_url,
-        ];
-    }
-});
