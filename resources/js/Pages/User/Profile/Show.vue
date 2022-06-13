@@ -13,7 +13,7 @@
                 <span class="block relative h-20 w-32">
                     <img
                         alt="Avatar del perfil"
-                       :src="$page.props.profile.profile_photo_path"
+                       :src="$page.props.profile.profile_photo_url"
                         class="mx-auto object-cover rounded-full h-24 w-24 bg-white p-1"
                     />
                 </span>

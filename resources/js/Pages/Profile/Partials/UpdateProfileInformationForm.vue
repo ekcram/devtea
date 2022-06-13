@@ -17,6 +17,7 @@
                     type="file"
                     class="hidden"
                     ref="photo"
+                    name="photo"
                     @change="updatePhotoPreview"
                 />
 
