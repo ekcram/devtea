@@ -18,11 +18,20 @@ trait HasProfileHeaderPhoto
     public function updateProfileHeaderPhoto(UploadedFile $photo)
     {
         tap($this->profile_header_photo_path, function ($previous) use ($photo) {
-            $this->forceFill([
-                'profile_header_photo_path' => $photo->storePublicly(
-                    'profile-photos', ['disk' => $this->profileHeaderPhotoDisk()]
-                ),
-            ])->save();
+            if($photo){
+                $file = $photo;
+                $extention = $file->getClientOriginalExtension();
+                $filename = time().'.'.$extention;
+                $file->move('profile-photos/', $filename);
+                $this->forceFill([
+                    'profile_photo_path' =>  $filename
+                ])->save();
+            };
+            // $this->forceFill([
+            //     'profile_header_photo_path' => $photo->storePublicly(
+            //         'profile-photos', ['disk' => $this->profileHeaderPhotoDisk()]
+            //     ),
+            // ])->save();
 
             if ($previous) {
                 Storage::disk($this->profileHeaderPhotoDisk())->delete($previous);
