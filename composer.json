@@ -13,6 +13,7 @@
         "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "^1.0",
         "masbug/flysystem-google-drive-ext": "^1.2",
         "pusher/pusher-php-server": "^7.0",
         "stripe/stripe-php": "^7.125",

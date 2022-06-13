@@ -26,7 +26,7 @@
                 </div>
             </button>
             <!-- DIV Crear Tema de discusión -->
-            <!-- <a v-if="this.$page.props.user.subscription.status == 'active'" :href="route('doubts.index')" class="flex flex-col relative group h-40">
+            <a v-if="this.$page.props.user.subscription.status == 'active'" :href="route('doubts.index')" class="flex flex-col relative group h-40">
                 <span class="absolute inset-0 border-2 border-steel-teal border-dashed"></span>
 
                 <div class="relative flex items-end h-full transition-transform transform bg-white border-2 border-steel-teal group-hover:-translate-x-2 group-hover:-translate-y-2">
@@ -39,7 +39,7 @@
                         <h2 class="mt-4 text-2xl font-medium">Crear un tema de discusión</h2>
                     </div>
                 </div>
-            </a> -->
+            </a>
             <!-- DIV DevTeas recibidos(donados) -->
              <div class="flex flex-col relative group h-40 ml-5">
                 <span class="absolute inset-0 border-2 border-steel-teal border-dashed"></span>
