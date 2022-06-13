@@ -72,7 +72,7 @@
 
                 <!-- Profile Photo File Input -->
                 <input type="file" class="hidden" ref="headerPhoto" @change="updateHeaderPhotoPreview"/>
-                <jet-label for="headerPhoto" value="Foto header de perfil" class="text-steel-teal"/>
+                <jet-label for="headerPhoto" name="headerPhoto" value="Foto header de perfil" class="text-steel-teal"/>
 
                 <!-- Current Profile Header Photo -->
                 <div class="mt-2" v-show="!headerPhotoPreview">

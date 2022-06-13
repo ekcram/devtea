@@ -73,8 +73,8 @@ return [
     |
     */
 
-    'profile_photo_disk' => 'public',
-    'profile_header_photo_disk' => 'public',
+    'profile_photo_disk' => 's3',
+    'profile_header_photo_disk' => 's3',
 
 
 ];

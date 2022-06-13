@@ -53,6 +53,18 @@ return [
             'url' => env('APP_URL').'/photos',
             'visibility' => 'public',
         ],
+        //  's3' => [
+        //     'driver' => 's3',
+        //     'visibility' => 'public',
+        //     'key' => 'AKIA3R7M77VJTNRAPUIH',
+        //     'secret' => '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',
+        //     'region' => 'eu-west-2',
+        //     'bucket' => 'devtea-bucket',
+        //     'url' => env('AWS_URL'),
+        //     'endpoint' => env('AWS_ENDPOINT'),
+        //     'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+        // ],
+        
 
         's3' => [
             'driver' => 's3',

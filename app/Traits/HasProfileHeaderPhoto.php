@@ -20,18 +20,10 @@ trait HasProfileHeaderPhoto
         tap($this->profile_header_photo_path, function ($previous) use ($photo) {
             if($photo){
                 $file = $photo;
-                $extention = $file->getClientOriginalExtension();
-                $filename = time().'.'.$extention;
-                $file->move('profile-photos/', $filename);
+                $filename = $file->getClientOriginalName();
                 $this->forceFill([
-                    'profile_photo_path' =>  $filename
-                ])->save();
-            };
-            // $this->forceFill([
-            //     'profile_header_photo_path' => $photo->storePublicly(
-            //         'profile-photos', ['disk' => $this->profileHeaderPhotoDisk()]
-            //     ),
-            // ])->save();
+                    'profile_header_photo_path' => $file->storeAs('avatars', $filename, 's3')])->save();
+            }
 
             if ($previous) {
                 Storage::disk($this->profileHeaderPhotoDisk())->delete($previous);
@@ -94,6 +86,6 @@ trait HasProfileHeaderPhoto
      */
     protected function profileHeaderPhotoDisk()
     {
-        return isset($_ENV['VAPOR_ARTIFACT_NAME']) ? 's3' : config('jetstream.profile_photo_disk', 'public');
+        return isset($_ENV['VAPOR_ARTIFACT_NAME']) ? 's3' : config('jetstream.profile_header_photo_disk', 's3');
     }
 }
