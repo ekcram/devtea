@@ -123,7 +123,7 @@ export default {
             })
         },
         cargarMasPosts(){
-            const apiurl = 'https://dev-tea.herokuapp.com/user/dashboard?page=' + this.pagination.current_page
+            const apiurl = 'https://dev-tea.herokuapp.com/user/dashboard?page=' + this.pagination.next_page
             if(!this.allPosts.next_page_url){
                 return
             } 
