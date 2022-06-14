@@ -17,6 +17,7 @@ class MemberController extends Controller
     public function index(Request $request, User $user)
     {
         $members = User::notAuthUser($user)->paginate(5);
+        $members->setPath('members');
 
         if($request->wantsJson()){
             return $members;
