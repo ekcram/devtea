@@ -1189,10 +1189,14 @@ video {
   margin-bottom: 0.25rem;
 }.mr-1{
   margin-right: 0.25rem;
+}.mt-16{
+  margin-top: 4rem;
 }.mb-5{
   margin-bottom: 1.25rem;
 }.mb-2{
   margin-bottom: 0.5rem;
+}.mt-12{
+  margin-top: 3rem;
 }.mb-3{
   margin-bottom: 0.75rem;
 }.mr-5{
@@ -1217,10 +1221,6 @@ video {
   margin-top: 1.75rem;
 }.mb-7{
   margin-bottom: 1.75rem;
-}.mt-12{
-  margin-top: 3rem;
-}.mt-16{
-  margin-top: 4rem;
 }.block{
   display: block;
 }.inline-block{
@@ -1446,8 +1446,6 @@ video {
   justify-content: center;
 }.justify-between{
   justify-content: space-between;
-}.justify-items-center{
-  justify-items: center;
 }.gap-6{
   gap: 1.5rem;
 }.gap-4{
@@ -1621,9 +1619,6 @@ video {
 }.border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}.border-indigo-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(104 117 245 / var(--tw-border-opacity));
 }.border-blue-100{
   --tw-border-opacity: 1;
   border-color: rgb(225 239 254 / var(--tw-border-opacity));
@@ -1950,10 +1945,10 @@ video {
   line-height: 1.25;
 }.leading-4{
   line-height: 1rem;
-}.leading-\[3\.5rem\]{
-  line-height: 3.5rem;
 }.leading-none{
   line-height: 1;
+}.leading-\[3\.5rem\]{
+  line-height: 3.5rem;
 }.leading-normal{
   line-height: 1.5;
 }.leading-6{
@@ -2213,8 +2208,6 @@ nav a:hover {
 }.hover\:border-green-sheen:hover{
   --tw-border-opacity: 1;
   border-color: rgb(116 180 155 / var(--tw-border-opacity));
-}.hover\:border-transparent:hover{
-  border-color: transparent;
 }.hover\:bg-indigo-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(88 80 236 / var(--tw-bg-opacity));
@@ -2263,9 +2256,6 @@ nav a:hover {
 }.hover\:bg-regal-blue:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(7 67 136 / var(--tw-bg-opacity));
-}.hover\:bg-green-400:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(49 196 141 / var(--tw-bg-opacity));
 }.hover\:bg-green-sheen:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(116 180 155 / var(--tw-bg-opacity));
@@ -2305,9 +2295,6 @@ nav a:hover {
 }.hover\:text-midnight-green:hover{
   --tw-text-opacity: 1;
   color: rgb(31 77 91 / var(--tw-text-opacity));
-}.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }.hover\:text-blue-600:hover{
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
@@ -2746,6 +2733,9 @@ nav a:hover {
     border-top-width: 0px;
   }.md\:border-l{
     border-left-width: 1px;
+  }.md\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }.md\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2755,9 +2745,6 @@ nav a:hover {
   }.md\:py-24{
     padding-top: 6rem;
     padding-bottom: 6rem;
-  }.md\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }.md\:pl-12{
     padding-left: 3rem;
   }.md\:pt-0{

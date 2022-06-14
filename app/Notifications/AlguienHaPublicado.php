@@ -59,7 +59,7 @@ class AlguienHaPublicado extends Notification implements ShouldQueue
         return [
             'info' =>[
                 'message' => $this->user->username." ha publicado en tu perfil.",
-                'link' => route('dashboard.index'),
+                'link' => route('profiles.show', $this->auth()->user()),
                 'avatar' => $this->user->profile_photo_url,
                 'sent' => Carbon::now(),
             ]
