@@ -11,14 +11,6 @@
                 <span
                     class="text-gray-800 leading-tight text-lg capitalize mt-5 sm:mt-0"
                 >
-                    <!-- <inertia-link>
-                        <button
-                         :href="route('friends.index')"
-                            class="bg-transparent hover:bg-green-400 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded"
-                        >
-                            Ver mis amigos
-                        </button>
-                    </inertia-link> -->
                 </span>
             </div>
         </template>
