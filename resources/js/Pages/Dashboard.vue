@@ -127,7 +127,7 @@ export default {
             if(!this.allPosts.next_page_url){
                 return
             } 
-            return  axios.get(apiurl).then(resp => {
+            return  axios.get(this.pagination.next_page_url).then(resp => {
                 this.allPosts = {
                        ...resp.data,
                        data: [
