@@ -46,6 +46,7 @@
                                         type="text" 
                                         name="card_name"
                                         v-model="form.card_name"/>
+                                        <jet-input-error :message="form.errors.card_name" class="mt-2" v-if="form.errors.card_name"></jet-input-error>
                                     </div>
 
                                     <div class="col-span-6">
@@ -59,6 +60,7 @@
                                             name="cus_email"
                                             v-model="form.cus_email"
                                         />
+                                         <jet-input-error :message="form.errors.cus_email" class="mt-2" v-if="form.errors.cus_email"></jet-input-error>
                                     </div>
 
                                     <div class="col-span-6">
@@ -68,12 +70,13 @@
 
                                         <input
                                             class="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
-                                            type="tel"
+                                            type="number"
                                             pattern="[0-9]{9}"
                                             id="phone"
                                             name="cus_phone"
                                             v-model="form.cus_phone"
                                         />
+                                         <jet-input-error :message="form.errors.cus_phone" class="mt-2" v-if="form.errors.cus_phone"></jet-input-error>
                                     </div>
 
                                     <fieldset class="col-span-6">
@@ -94,6 +97,7 @@
                                                     name="card_number"
                                                     required
                                                 />
+                                                <jet-input-error :message="form.errors.card_number" class="mt-2" v-if="form.errors.card_number"></jet-input-error>
                                             </div>
 
                                             <div class="flex -space-x-px">
@@ -104,11 +108,13 @@
 
                                                     <input
                                                     class="border-gray-200 relative rounded-bl-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
-                                                    type="text"
-                                                    placeholder="MM-YY"
+                                                    type="month"
+                                                    placeholder="mm-YY"
                                                     name="card_expiry"
                                                     v-model="form.card_expiry"
                                                     />
+                                                    
+                                                    <jet-input-error :message="form.errors.card_expiry" class="mt-2" v-if="form.errors.card_expiry"></jet-input-error>
                                                 </div>
 
                                                 <div class="flex-1">
@@ -122,6 +128,7 @@
                                                     name="card_cvc"
                                                     v-model="form.card_cvc"
                                                     />
+                                                    <jet-input-error :message="form.errors.card_cvc" class="mt-2" v-if="form.errors.card_cvc"></jet-input-error>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,6 +152,7 @@
                                                         {{ country.country }}
                                                     </option>
                                                 </select>
+                                                <jet-input-error :message="form.errors.cus_country" class="mt-2" v-if="form.errors.cus_country"></jet-input-error>
                                             </div>
 
                                             <div>
@@ -160,6 +168,7 @@
                                                     name="cus_zipcode"
                                                     v-model="form.cus_zipcode"
                                                 />
+                                                <jet-input-error :message="form.errors.cus_zipcode" class="mt-2" v-if="form.errors.cus_zipcode"></jet-input-error>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -184,14 +193,13 @@
 import { Head } from '@inertiajs/inertia-vue3'
 import PagesLayout from "@/Layouts/PagesLayout.vue";
 import GreenButton from "@/Components/Buttons/GreenButton.vue";
+import JetInputError from "@/Jetstream/InputError";
 export default {
     components: {
         Head,
         PagesLayout,
-        GreenButton
-    },
-    props: {
-       
+        GreenButton,
+        JetInputError
     },
      mounted() {
         this.getCountries();
@@ -228,6 +236,13 @@ export default {
                         title: "Pago realizado con éxito",
                     })
                     this.loading = false
+                },
+                onError: () => {
+                     Toast.fire({
+                        icon: "error",
+                        title: "Hay errores en el formulario. Por favor, revisa los campos.",	
+                    })
+                    this.loading = false
                 } 
             });
         },
@@ -237,10 +252,6 @@ export default {
                 this.countries = response.data.data;
             });
         },
-        print() {
-            window.print();
-        }
-       
     },
 };
 </script>

@@ -20,6 +20,20 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+        
+      $todayDate = date('Y-m');
+      $validatedData =  $request->validate([
+            'card_number' => ['required', 'numeric', 'digits:16'],
+            'card_name' => ['required', 'regex:/^[a-zA-Zñª\s.á-úÁ-Ú]+$/i', 'max:100'],
+            'card_expiry' => ['required','date_format:Y-m', 'after_or_equal:'.$todayDate],
+            'card_cvc' => ['required', 'numeric', 'digits:3'],
+            'cus_country' => ['required', 'alpha', 'max:100'],
+            'cus_email' => ['required', 'email', 'email:rfc,dns'],
+            'cus_phone' => ['required', 'numeric', 'digits:9'],
+            'cus_zipcode' => ['required', 'numeric', 'digits:5'],
+            'price' => ['required', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'user_id' => 'required'
+        ]);
 
        $payment =  Payment::create([
             'card_number' => $request->card_number,
