@@ -4,6 +4,7 @@ namespace App\Notifications;
 
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -59,7 +60,7 @@ class AlguienHaPublicado extends Notification implements ShouldQueue
         return [
             'info' =>[
                 'message' => $this->user->username." ha publicado en tu perfil.",
-                'link' => route('profiles.show', $this->auth()->user()),
+                'link' => route('profiles.show', Auth::user()),
                 'avatar' => $this->user->profile_photo_url,
                 'sent' => Carbon::now(),
             ]
