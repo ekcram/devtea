@@ -123,10 +123,11 @@ export default {
             })
         },
         cargarMasPosts(){
+            const apiurl = 'https://dev-tea.herokuapp.com/user/dashboard?page=' + this.pagination.current_page
             if(!this.allPosts.next_page_url){
                 return
             } 
-            return  axios.get(this.allPosts.next_page_url).then(resp => {
+            return  axios.get(apiurl).then(resp => {
                 this.allPosts = {
                        ...resp.data,
                        data: [
