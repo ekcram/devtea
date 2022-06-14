@@ -22,7 +22,7 @@ class DashboardController extends Controller
     public function index(Request $request, User $user)
     {
         $combinedPosts = Post::where('parent_id', null)->allPosts()->latest()->paginate(5);
-        $combinedPosts->setPath('user/dashboard/');
+        $combinedPosts->setPath('dashboard');
         
         $donations = DB::table('donations')
         ->where('parent_id', auth()->user()->id)
