@@ -25,6 +25,7 @@ class ProjectController extends Controller
         if (request('search')) {
             $projects = Project::query();
             $projects->where('name', 'LIKE', '%'.request('search').'%');
+            $projects->setPath('projects');
         }
 
         return Inertia::render('User/Projects/Index', [

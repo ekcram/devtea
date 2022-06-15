@@ -2,15 +2,9 @@
     <Head title="DevFriends - DevTea" />
     <pages-layout>
         <template #title>
-            <div
-                class="flex flex-col items-center sm:flex-row sm:justify-between"
-            >
-                <div
-                    class="text-4xl font-extrabold leading-none tracking-tight font-inter"
-                >
-                    <span
-                        class="box-decoration-slice rounded text-white customSpan leading-[3.5rem] px-2"
-                    >
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+                <div class="text-4xl font-extrabold leading-none tracking-tight font-inter">
+                    <span class="box-decoration-slice rounded text-white customSpan leading-[3.5rem] px-2">
                         DevFriends
                     </span>
                 </div>
