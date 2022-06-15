@@ -96,7 +96,7 @@ class UserController extends Controller
     {
 
         if (Gate::allows('manageUsers')) {
-            $role = Role::where('name', $request->roles[0]['name'])->first();
+            // $role = Role::where('name', $request->roles->name)->first();
             if ($user->is_admin != 1 && $role->name != 'user') {
                 $user->roles()->sync($role);
                 $user->update(['is_admin' => 1]);
