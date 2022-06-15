@@ -8,9 +8,9 @@
                     </span>
             </div>
 
-            <div class="text-center my-4" v-if="$page.props.success">
+            <!-- <div class="text-center my-4" v-if="$page.props.success">
                 <span class="text-2xl bg-blue-500 text-gray-50 px-2 rounded-md">{{ $page.props.success }}</span>
-            </div>
+            </div> -->
             
             <!-- Filtro de búsqueda -->
             <div class="flex items-center mr-4 mb-5 w-full max-w-md">

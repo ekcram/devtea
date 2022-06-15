@@ -22,7 +22,7 @@
                     </div>
                     <div class="flex flex-col mt-2">
                         <jet-label for="created_at" value="Joined" class="text-md text-midnight-green"></jet-label>
-                        <jet-input id="created_at" type="text" class="mt-1 block w-full disabled:opacity-50" v-model="form.created_at" required autofocus></jet-input>
+                        <jet-input id="created_at" type="text" class="mt-1 block w-full disabled:opacity-50" v-model="form.created_at" required autofocus disabled></jet-input>
                         <jet-input-error :message="form.errors.created_at" class="mt-2"></jet-input-error>
                     </div>
                     <div class="flex items-center justify-center mt-8">
@@ -73,7 +73,14 @@
         },
         methods: {
             submit() {
-                this.form.patch(this.route('admin.users.update', this.user.id), this.form)
+                this.form.patch(this.route('admin.users.update', this.user.id), this.form,{
+                    onSuccess: () => {
+                         Toast.fire({
+                            icon: "success",
+                            title: "Usuario actualizado correctamente",
+                        })
+                    }
+                })
             }
         }
     }

@@ -18,11 +18,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        // $admins = User::where('is_admin', 1)->get();
-        // return Inertia::render('Admin/Admins/Index', [
-        //     'admins' => $admins,
-        // ]);
-
         request()->validate([
             'direction' => ['in:asc,desc'],
             'field' => ['in:name,city']
@@ -97,13 +92,19 @@ class AdminController extends Controller
     {
         if(Gate::allows('manageAdmins')){
             $role = Role::where('name', $request->roles[0][0]['name'])->first();
+            
             if ($role->name != 'user' && $user->is_admin = 1) {
                 $user->roles()->sync($role);
+                $user->update([
+                    'name' =>  $request->name,
+                    'email' => $request->email,
+                ]);
             } elseif ($role->name = 'user' && $user->is_admin = 1) {
                 $user->roles()->sync($role);
                 $user->update(['is_admin' => 0]);
             }
-            return redirect()->route('admin.admins.index')->withSuccess(ucwords($user->name) . ' has been successfully updated!');
+
+            return redirect()->route('admin.admins.index');
         }
         return back();
     }

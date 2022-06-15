@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admins;
 use App\Models\Role;
 use App\Models\User;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -94,13 +94,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
         if (Gate::allows('manageUsers')) {
-            $role = Role::where('name', $request->roles->name)->first();
-            if ($user->is_admin != 1 && $role->name != 'user') {
-                $user->roles()->sync($role);
-                $user->update(['is_admin' => 1]);
-            }
+            $user->update([
+                'name' =>  $request->name,
+                'email' => $request->email,
+            ]);
 
             return redirect()->route('admin.users.index')->withSuccess(ucwords($user->name) . ' has been successfully updated!');
         }
