@@ -73,15 +73,7 @@
         },
         methods: {
             submit() {
-                this.form.patch(this.route('admin.users.index', this.user.id),  this.form, { 
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        Toast.fire({
-                            icon: "success",
-                            title: "Usuario actualizado correctamente",
-                        })
-                    } 
-                });
+                this.form.patch(this.route('admin.users.update', this.user.id), this.form)
             }
         }
     }
