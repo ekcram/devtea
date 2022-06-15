@@ -99,12 +99,6 @@ class UserController extends Controller
                     'name' =>  $request->name,
                     'email' => $request->email,
                 ]);
-            $role = Role::where('name', $request->roles[0][0]['name'])->first();
-            if ($user->is_admin != 1 && $role->name != 'user') {
-                $user->roles()->sync($role);
-                $user->update(['is_admin' => 1]);
-            }
-
             return redirect()->route('admin.users.index')->withSuccess(ucwords($user->name) . ' has been successfully updated!');
         }
 
