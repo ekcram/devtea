@@ -28,7 +28,7 @@ class DoubtController extends Controller
             $doubts->where('name', 'LIKE', '%'.request('search').'%');
         }
         return Inertia::render('User/Doubts/Index', [
-            'doubts' => $doubts->paginate(5)->withQueryString(),
+            'doubts' => $doubts->paginate(5)->withQueryString()->setPath('doubts'),
             'filters' => request()->all(['search', 'field', 'direction'])
         ]);
     }
