@@ -29,7 +29,7 @@ class ProjectController extends Controller
         }
 
         return Inertia::render('User/Projects/Index', [
-            'projects' => $projects->paginate(5)->withQueryString(),
+            'projects' => $projects->paginate(5)->withQueryString()->setPath('projects'),
             'filters' => request()->all(['search', 'field', 'direction'])
         ]);
     }
