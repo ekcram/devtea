@@ -36,7 +36,7 @@ class RoleController extends Controller
             }
      
             return Inertia::render('Admin/Roles/Index', [
-                'roles' => $query->paginate(8)->withQueryString(),
+                'roles' => $query->paginate(8)->withQueryString()->setPath('roles'),
                 'filters' => request()->all(['search', 'field', 'direction'])
             ]);
         }

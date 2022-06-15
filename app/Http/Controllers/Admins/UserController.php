@@ -40,7 +40,7 @@ class UserController extends Controller
             }
      
             return Inertia::render('Admin/Users/Index', [
-                'users' => $query->paginate(8)->withQueryString(),
+                'users' => $query->paginate(8)->withQueryString()->setPath('users'),
                 'filters' => request()->all(['search', 'field', 'direction'])
             ]);
         }

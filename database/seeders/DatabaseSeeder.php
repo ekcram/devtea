@@ -18,8 +18,5 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
         ]);
         
-        \App\Models\User::factory(10)->hasProfile()->hasPosts(5)->create();
-        \App\Models\Comment::factory(2)->create();
-        \App\Models\Doubt::factory(5)->create();
     }
 }

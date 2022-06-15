@@ -42,7 +42,7 @@ class AdminController extends Controller
             }
      
             return Inertia::render('Admin/Admins/Index', [
-                'admins' => $query->paginate(8)->withQueryString(),
+                'admins' => $query->paginate(8)->withQueryString()->setPath('admins'),
                 'filters' => request()->all(['search', 'field', 'direction'])
             ]);
         
