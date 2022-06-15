@@ -4,11 +4,14 @@ namespace App\Http\Controllers\User;
 
 use App\Models\User;
 use Inertia\Inertia;
+use App\Models\Friend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Events\SolicitudAmistadAceptadaEvent;
 use App\Events\SolicitudAmistadRecibidaEvent;
-//use App\Notifications\SolicitudAmistadRecibida;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class FriendController extends Controller
 {
@@ -18,10 +21,22 @@ class FriendController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+      
+        $friends = auth()->user()->friends();
+        // $friends = collect($friends)->paginate(5);
+        // $data->setPath('friends');
+        
         return Inertia::render('User/Friends/Index', [
-            'friends' => auth()->user()->friends()->setPath('friends'),
+            'friends' => $friends,
             'requests' => auth()->user()->pending_friend_requests(),
         ]);
+    }
+
+    public function paginate($items, $perPage = 5, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
     }
 
 
