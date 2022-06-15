@@ -104,7 +104,7 @@ class AdminController extends Controller
                 $user->update(['is_admin' => 0]);
             }
 
-            return redirect()->route('admin.admins.index');
+            return redirect()->route('admin.admins.index')->withSuccess('Usuario actualizado correctamente');
         }
         return back();
     }
